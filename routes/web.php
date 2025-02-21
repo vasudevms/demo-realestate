@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ResourceController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +43,7 @@ Route::group(
     ],
     function () {
         Route::get('/', [ResourceController::class, 'home'])->name('home');
+        Route::get('/neighbourhoods', [PublicController::class, 'neighbourhoods'])->name('neighbourhood');
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

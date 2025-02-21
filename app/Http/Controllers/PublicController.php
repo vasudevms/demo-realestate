@@ -32,4 +32,10 @@ class PublicController extends BaseController
             ->data(compact('data'))
             ->output();
     }
+    
+    public function neighbourhoods()
+    {
+        return view('theme::neighbourhood');
+    }
+
 }
